@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Est-ce que tu veux être ma valentine ?</h1>
+    <button id="yes" onclick="goVictory()">OUI</button>
+    <button id="no">NON</button>
+</div>
+
+<script>
+    const noButton = document.getElementById("no");
+
+    noButton.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+        noButton.style.left = x + "px";
+        noButton.style.top = y + "px";
+    });
+
+    function goVictory() {
+        window.location.href = "victory.html";
+    }
+</script>
+
+</body>
+</html>
